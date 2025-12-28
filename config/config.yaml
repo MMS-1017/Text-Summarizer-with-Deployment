@@ -10,13 +10,13 @@ data_ingestion:
   unzip_dir: artifacts/data_ingestion # Directory where data is extracted
 
 
+# 2- Ensuring data integrity and correctness
+data_validation:
+  root_dir: artifacts/data_validation # Validation artifacts
+  STATUS_FILE: artifacts/data_validation/status.txt # Stores validation success/failure
+  ALL_REQUIRED_FILES: ["train", "test", "validation"] # Required dataset splits
+# Logic: Check if train/, test/, and validation/ exist, then write True/False to status.txt
 
-# # 2- Ensuring data integrity and correctness
-# data_validation:
-#   root_dir: artifacts/data_validation # Validation artifacts
-#   STATUS_FILE: artifacts/data_validation/status.txt # Stores validation success/failure
-#   ALL_REQUIRED_FILES: ["train", "test", "validation"] # Required dataset splits
-# # Logic: Check if train/, test/, and validation/ exist, then write True/False to status.txt
 
 # # 3- data transformation: prepare data for model training
 # data_transformation:
