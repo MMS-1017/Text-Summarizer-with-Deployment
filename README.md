@@ -1,8 +1,8 @@
+# NLP Text-Summarizer-Project
+
 End-to-end CI/CD pipeline for deploying a Dockerized NLP application built with Hugging Face Transformers.
 Automates build, push to Amazon ECR, and EC2 deployment using GitHub Actions.
 
-
-# End to end Text-Summarizer-Project
 
 ## Workflows
 
