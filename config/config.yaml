@@ -18,23 +18,23 @@ data_validation:
 # Logic: Check if train/, test/, and validation/ exist, then write True/False to status.txt
 
 
-# # 3- data transformation: prepare data for model training
-# data_transformation:
-#   root_dir: artifacts/data_transformation # Transformed data storage
-#   data_path: artifacts/data_ingestion/samsum_dataset # Raw dataset location
-#   tokenizer_name: google/pegasus-cnn_dailymail # HuggingFace PEGASUS tokenizer
+# 3- data transformation: prepare data for model training
+data_transformation:
+  root_dir: artifacts/data_transformation # Transformed data storage
+  data_path: artifacts/data_ingestion/samsum_dataset # Raw dataset location
+  tokenizer_name: google/pegasus-cnn_dailymail # HuggingFace PEGASUS tokenizer
 
-# # 4- Model Trainer
-# model_trainer:
-#   root_dir: artifacts/model_trainer # Stores trained model
-#   data_path: artifacts/data_transformation/samsum_dataset # Tokenized dataset
-#   model_ckpt: google/pegasus-cnn_dailymail # Pretrained checkpoint
-# # User: Transfer learning,  fine-tuning PEGASUS for SAMSum dataset
+# 4- Model Trainer
+model_trainer:
+  root_dir: artifacts/model_trainer # Stores trained model
+  data_path: artifacts/data_transformation/samsum_dataset # Tokenized dataset
+  model_ckpt: google/pegasus-cnn_dailymail # Pretrained checkpoint
+# User: Transfer learning,  fine-tuning PEGASUS for SAMSum dataset
 
-# # 5- Model Evaluation
-# model_evaluation:
-#   root_dir: artifacts/model_evaluation  # Evaluation artifacts
-#   data_path: artifacts/data_transformation/samsum_dataset  # Evaluation dataset
-#   model_path: artifacts/model_trainer/pegasus-samsum-model # Trained model
-#   tokenizer_path: artifacts/model_trainer/tokenizer # Tokenizer used
-#   metric_file_name: artifacts/model_evaluation/metrics.csv # Evaluation metrics
+# 5- Model Evaluation
+model_evaluation:
+  root_dir: artifacts/model_evaluation  # Evaluation artifacts
+  data_path: artifacts/data_transformation/samsum_dataset  # Evaluation dataset
+  model_path: artifacts/model_trainer/pegasus-samsum-model # Trained model
+  tokenizer_path: artifacts/model_trainer/tokenizer # Tokenizer used
+  metric_file_name: artifacts/model_evaluation/metrics.csv # Evaluation metrics
